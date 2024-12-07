@@ -53,8 +53,8 @@ function Header() {
           <ul
             className={`flex h-full items-center justify-end  
               active
-                ? " gap-8  "
-                : " gap-14 "
+                ? "gap-8"
+                : "gap-14"
             `}
           >
             <li className="font-semibold">

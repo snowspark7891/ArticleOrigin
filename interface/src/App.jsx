@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Header from "./Components/Header/Header.jsx";
 import './App.css'
 import { BrowserRouter,Route } from 'react-router-dom';
-import CountryNews from './Components/COuntrynews.jsx';
+import CountryNews from './Components/Countrynews.jsx';
 import AllNews from './Components/Allnews.jsx';
 import TopHeadlines from './Components/TopheadLines.jsx';
 import { Routes } from 'react-router-dom';

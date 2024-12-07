@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import style from "./Header.module.css";
 import logo from "../../assets/Article.png";
 import countries from "../countries/countries.jsx";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import downArrow from "../../assets/downarrow.png";
+
 
 function Header() {
   const [active, setActive] = useState(false);
@@ -73,33 +75,62 @@ function Header() {
             {/* <button className="bg-white rounded-full px-4 py-1 font-semibold">
               Select Country
             </button> */}
-            {/* <ul
-              className={`fixed bg-gray-600 ${
-                countryDropdown ? "dropdown p-2 show-dropdown" : "dropdown p-2"
-              }`}
-            >
-              {countries.map((element, index) => (
-                <li
-                  key={index}
-                  onClick={() => setCountryDropdown(!countryDropdown)}
-                >
-                  <Link
-                    to={"/country/" + element?.iso_2_alpha}
-                    className="flex gap-3"
-                    type="btn"
-                    onClick={() => setActive(!active)}
-                  >
-                    <img
-                      src={element?.png}
-                      srcSet={`https://flagcdn.com/32x24/${element?.iso_2_alpha}.png 2x`}
-                      alt={element?.countryName}
-                    />
-                    <span>{element?.countryName}</span>
-                  </Link>
-                </li>
-              ))} 
-            </ul>
-            */}
+            
+            
+
+            {/* <li className="dropdown-li">
+              <Link
+                className="no-underline font-semibold flex items-center gap-2"
+                onClick={() => {
+                  setCountryDropdown(!countryDropdown);
+                  setCountryDropdown(false);
+                }}
+              >
+                Country{" "}
+                <FontAwesomeIcon
+                  className={
+                    countryDropdown
+                      ? "down-arrow-icon down-arrow-icon-active"
+                      : "down-arrow-icon"
+                  }
+                  icon={downArrow}
+                />
+              </Link>
+              <ul
+                className={
+                  countryDropdown
+                    ? "dropdown p-2 show-dropdown"
+                    : "dropdown p-2"
+                }
+              >
+                {countries.map((element, index) => {
+                  return (
+                    <li
+                      key={index}
+                      onClick={() => {
+                        setCountryDropdown(!countryDropdown);
+                      }}
+                    >
+                      <Link
+                        to={"/country/" + element?.iso_2_alpha}
+                        className="flex gap-3"
+                        type="btn"
+                        onClick={() => {
+                          setActive(!active);
+                        }}
+                      >
+                        <img
+                          src={element?.png}
+                          srcset={`https://flagcdn.com/32x24/${element?.iso_2_alpha}.png 2x`}
+                          alt={element?.countryName}
+                        />
+                        <span>{element?.countryName}</span>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li> */}
 
             <li>
               <Link
